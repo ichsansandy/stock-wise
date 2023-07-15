@@ -4,12 +4,13 @@ import {
 } from 'lucide-react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Dropdown } from 'antd';
 import { changeTheme } from '../redux/theme/changeThemeSlice';
 
 function Navbar() {
   const dispatch = useDispatch();
+  const theme = useSelector((state) => state.changeTheme.value);
 
   const items = [
     {
@@ -41,17 +42,17 @@ function Navbar() {
 
   return (
     <nav className="flex justify-center items-center w-full border-b-slate-600 border-b-2">
-      <ul className="flex justify-between p-4 w-full max-w-[900px]">
+      <ul className="flex justify-between p-4 w-full max-w-wrap">
         <NavLink className="flex items-center gap-2" to="/">
           <TrendingUp />
           Stockwise
         </NavLink>
         <div className="flex gap-3">
-          <a className="flex items-center gap-2" target="_blank" href="https://github.com/ichsansandy/stock-wise/" rel="noreferrer">
+          <a className={`${theme} flex items-center gap-2 border-primary border-2 p-2 rounded-xl`} target="_blank" href="https://github.com/ichsansandy/stock-wise/" rel="noreferrer">
             <Github />
             <div className="hidden sm:block">Github</div>
           </a>
-          <NavLink className="flex items-center gap-2" to="/aboutme">
+          <NavLink className={`${theme} flex items-center gap-2 border-primary border-2 p-2 rounded-xl`} to="/aboutme">
             <ScanFace />
             <div className="hidden sm:block">About Me</div>
           </NavLink>
@@ -63,7 +64,10 @@ function Navbar() {
             }}
             trigger={['click']}
           >
-            <Palette />
+            <div className={`${theme} flex items-center gap-2 border-primary border-2 p-2 rounded-xl`}>
+              <Palette />
+              <div className="hidden sm:block">Theme</div>
+            </div>
           </Dropdown>
         </div>
       </ul>

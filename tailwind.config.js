@@ -9,6 +9,9 @@ module.exports = {
         accent: 'var(--accent)',
         textClr: 'var(--textClr)',
       },
+      maxWidth: {
+        wrap: '1000px',
+      },
     },
   },
   plugins: [],

@@ -6,14 +6,14 @@ function StockDetailsPage() {
   const { id } = useParams();
 
   return (
-    <div className="flex items-center justify-between mt-3 p-2">
-      <Link to="/">
-        <ChevronLeft className="w-8 h-8 " />
-      </Link>
-      <div className="text-center text-3xl">
-        {`StockName ${id}`}
+    <div className="flex justify-center">
+      <div className="max-w-wrap box-border w-full flex items-center justify-between mt-3 p-2">
+        <Link to="/">
+          <ChevronLeft className="w-8 h-8 " />
+        </Link>
+        <div className="text-center text-3xl">{`${id}`}</div>
+        <Bookmark className="w-8 h-8 " />
       </div>
-      <Bookmark className="w-8 h-8 " />
     </div>
   );
 }
