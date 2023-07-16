@@ -1,6 +1,5 @@
 import {
-  Circle,
-  Github, Palette, ScanFace, TrendingUp,
+  Circle, Github, Palette, ScanFace, TrendingUp,
 } from 'lucide-react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
@@ -41,18 +40,18 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex justify-center items-center w-full border-b-slate-600 border-b-2">
-      <ul className="flex justify-between p-4 w-full max-w-wrap">
-        <NavLink className="flex items-center gap-2" to="/">
+    <nav className="sticky top-0 bg-white flex justify-center items-center w-full border-b-slate-600 border-b-2">
+      <ul className="flex justify-between p-4 w-full max-w-wrap relative">
+        <NavLink className={({ isActive }) => (isActive ? `${theme} flex items-center gap-2  transition after:w-[4.2rem] after:absolute after:bottom-5 after:left-12 after:bg-primary after:h-1 after:block after:rounded-2xl` : `${theme} transition flex items-center gap-2  after:w-9 after:absolute after:bottom-5 after:left-12 after:bg-primary after:h-1 after:block after:rounded-2xl `)} to="/">
           <TrendingUp />
           Stockwise
         </NavLink>
         <div className="flex gap-3">
-          <a className={`${theme} flex items-center gap-2 border-primary border-2 p-2 rounded-xl`} target="_blank" href="https://github.com/ichsansandy/stock-wise/" rel="noreferrer">
+          <a className={`${theme} transition flex items-center gap-2 border-primary border-2 p-2 rounded-xl hover:text-textClr hover:bg-primary`} target="_blank" href="https://github.com/ichsansandy/stock-wise/" rel="noreferrer">
             <Github />
             <div className="hidden sm:block">Github</div>
           </a>
-          <NavLink className={`${theme} flex items-center gap-2 border-primary border-2 p-2 rounded-xl`} to="/aboutme">
+          <NavLink className={({ isActive }) => (isActive ? `${theme} flex items-center gap-2 border-primary border-2 p-2 rounded-xl text-textClr bg-primary transition` : `${theme} flex items-center gap-2 border-primary border-2 p-2 rounded-xl hover:text-textClr hover:bg-primary transition`)} to="/aboutme">
             <ScanFace />
             <div className="hidden sm:block">About Me</div>
           </NavLink>
@@ -64,7 +63,7 @@ function Navbar() {
             }}
             trigger={['click']}
           >
-            <div className={`${theme} flex items-center gap-2 border-primary border-2 p-2 rounded-xl`}>
+            <div className={`${theme} cursor-pointer flex items-center gap-2 border-primary border-2 p-2 rounded-xl hover:text-textClr hover:bg-primary transition`}>
               <Palette />
               <div className="hidden sm:block">Theme</div>
             </div>
