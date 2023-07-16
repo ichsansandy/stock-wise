@@ -8,7 +8,7 @@ function StockCard({ data }) {
   const theme = useSelector((state) => state.changeTheme.value);
 
   return (
-    <Link to={`/${data.symbol}`} className={`text-white flex flex-col items-start justify-end p-3 bg-primary aspect-square hover:scale-95 transition outline-offset-8 border-spacing-4 hover:opacity-75 hover:border-accent hover:outline-2 hover:border-4 lg:w-[240px] lg:rounded-2xl ${theme}`}>
+    <Link to={`/${data.symbol}`} className={`text-white flex flex-col items-start justify-end p-3 bg-primary  aspect-square hover:scale-95 transition outline-offset-8 border-spacing-4 hover:opacity-75 hover:border-accent  hover:border-4 lg:w-[240px] lg:rounded-2xl ${theme}`}>
       <div className="flex items-center w-full justify-between">
         <div className="font-bold text-xl md:text-3xl">
           {data.symbol}

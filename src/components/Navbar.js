@@ -40,7 +40,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 bg-white flex justify-center items-center w-full border-b-slate-600 border-b-2">
+    <nav className="z-10 sticky top-0 bg-white flex justify-center items-center w-full border-b-slate-600 border-b-2">
       <ul className="flex justify-between p-4 w-full max-w-wrap relative">
         <NavLink className={({ isActive }) => (isActive ? `${theme} flex items-center gap-2  transition after:w-[4.2rem] after:absolute after:bottom-5 after:left-12 after:bg-primary after:h-1 after:block after:rounded-2xl` : `${theme} transition flex items-center gap-2  after:w-9 after:absolute after:bottom-5 after:left-12 after:bg-primary after:h-1 after:block after:rounded-2xl `)} to="/">
           <TrendingUp />
