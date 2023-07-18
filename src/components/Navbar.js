@@ -35,23 +35,23 @@ function Navbar() {
     items,
     onClick: changesTheme,
     selectable: true,
-    defaultSelectedKeys: ['1'],
+    defaultSelectedKeys: ['2'],
     type: 'button',
   };
 
   return (
     <nav className="z-10 sticky top-0 bg-white flex justify-center items-center w-full border-b-slate-600 border-b-2">
       <ul className="flex justify-between p-4 w-full max-w-wrap relative">
-        <NavLink className={({ isActive }) => (isActive ? `${theme} flex items-center gap-2  transition after:w-[4.2rem] after:absolute after:bottom-5 after:left-12 after:bg-primary after:h-1 after:block after:rounded-2xl` : `${theme} transition flex items-center gap-2  after:w-9 after:absolute after:bottom-5 after:left-12 after:bg-primary after:h-1 after:block after:rounded-2xl `)} to="/">
+        <NavLink className={({ isActive }) => (isActive ? `${theme} flex items-center gap-2  transition after:w-[4.2rem] after:absolute after:bottom-5 after:left-12 after:bg-accent after:h-1 after:block after:rounded-2xl` : `${theme} transition flex items-center gap-2  after:w-9 after:absolute after:bottom-5 after:left-12 after:bg-accent after:h-1 after:block after:rounded-2xl `)} to="/">
           <TrendingUp />
           Stockwise
         </NavLink>
         <div className="flex gap-3">
-          <a className={`${theme} transition flex items-center gap-2 border-primary border-2 p-2 rounded-xl hover:text-textClr hover:bg-primary`} target="_blank" href="https://github.com/ichsansandy/stock-wise/" rel="noreferrer">
+          <a className={`${theme} transition flex items-center gap-2 border-accent border-2 p-2 rounded-xl hover:text-textClr hover:bg-accent`} target="_blank" href="https://github.com/ichsansandy/stock-wise/" rel="noreferrer">
             <Github />
             <div className="hidden sm:block">Github</div>
           </a>
-          <NavLink className={({ isActive }) => (isActive ? `${theme} flex items-center gap-2 border-primary border-2 p-2 rounded-xl text-textClr bg-primary transition` : `${theme} flex items-center gap-2 border-primary border-2 p-2 rounded-xl hover:text-textClr hover:bg-primary transition`)} to="/aboutme">
+          <NavLink className={({ isActive }) => (isActive ? `${theme} flex items-center gap-2 border-accent border-2 p-2 rounded-xl text-textClr bg-accent transition` : `${theme} flex items-center gap-2 border-accent border-2 p-2 rounded-xl hover:text-textClr hover:bg-accent transition`)} to="/aboutme">
             <ScanFace />
             <div className="hidden sm:block">About Me</div>
           </NavLink>
@@ -63,7 +63,7 @@ function Navbar() {
             }}
             trigger={['click']}
           >
-            <div className={`${theme} cursor-pointer flex items-center gap-2 border-primary border-2 p-2 rounded-xl hover:text-textClr hover:bg-primary transition`}>
+            <div className={`${theme} cursor-pointer flex items-center gap-2 border-accent border-2 p-2 rounded-xl hover:text-textClr hover:bg-accent transition`}>
               <Palette />
               <div className="hidden sm:block">Theme</div>
             </div>

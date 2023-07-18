@@ -19,7 +19,7 @@ function StockCard({ data }) {
         </div>
       </div>
       <div className="flex items-center w-full justify-between">
-        <div className="text-xs w-[50%] line-clamp-1 md:text-base">
+        <div className="text-xs w-[40%] line-clamp-1 md:text-base">
           {data.name}
         </div>
         <div className="text-xs flex items-center gap-1 ">

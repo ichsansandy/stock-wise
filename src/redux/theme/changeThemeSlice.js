@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  value: 'magenta-madness',
+  value: 'royal-blue',
 };
 
 export const changeThemeSlice = createSlice({
