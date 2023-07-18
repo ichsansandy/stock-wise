@@ -3,12 +3,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { apiImgURL } from '../assets/stockData';
 
 function StockCard({ data }) {
   const theme = useSelector((state) => state.changeTheme.value);
 
   return (
-    <Link to={`/${data.symbol}`} className={`text-white flex flex-col items-start justify-end p-3 bg-primary  aspect-square hover:scale-95 transition outline-offset-8 border-spacing-4 hover:opacity-75 hover:border-accent  hover:border-4 lg:w-[240px] lg:rounded-2xl ${theme}`}>
+    <Link to={`/${data.symbol}`} className={`text-white flex flex-col items-start p-3 bg-primary  aspect-square hover:scale-95 transition outline-offset-8 border-spacing-4 hover:opacity-75 hover:border-accent  hover:border-4 lg:w-[240px] lg:rounded-2xl ${theme}`}>
+      <div className="flex justify-center items-center h-[70%] w-full">
+        <img src={apiImgURL(data.symbol)} alt="logo" className="h-[60%]" />
+      </div>
       <div className="flex items-center w-full justify-between">
         <div className="font-bold text-xl md:text-3xl">
           {data.symbol}
@@ -37,8 +41,8 @@ StockCard.propTypes = {
     cik: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     symbol: PropTypes.string.isRequired,
-    oneDay: PropTypes.string.isRequired,
-    ytd: PropTypes.string.isRequired,
+    oneDay: PropTypes.string,
+    ytd: PropTypes.string,
   }).isRequired,
 };
 

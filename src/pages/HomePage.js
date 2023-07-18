@@ -8,7 +8,7 @@ function HomePage() {
   const { status, stockData } = useSelector((state) => state.stockDatas);
   const dispatch = useDispatch();
 
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(true);
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
