@@ -1015,7 +1015,16 @@ stockData.forEach((item) => {
   setSectors.add(item.sector);
 });
 
-export const sectors = setSectors;
+const sector = [{ key: 'All', label: 'All' }];
+
+setSectors.forEach((item) => {
+  const object = {};
+  object.label = item;
+  object.key = item;
+  sector.push(object);
+});
+
+export const sectors = sector;
 
 export const apiPriceChangeURL = `https://financialmodelingprep.com/api/v3/stock-price-change/${stockSymbol}?apikey=${process.env.REACT_APP_FMP_API_KEY}`;
 

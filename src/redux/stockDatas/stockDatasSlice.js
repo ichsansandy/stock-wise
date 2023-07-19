@@ -4,6 +4,11 @@ import { apiPriceChangeURL, stockData } from '../../assets/stockData';
 
 export const fetchStockPriceChange = createAsyncThunk('stockDatas/fetchPriceChange', () => axios.get(apiPriceChangeURL).then((res) => res.data));
 
+stockData.forEach((item) => {
+  item.oneDay = '';
+  item.ytd = '';
+});
+
 const initialState = {
   status: 'idle',
   stockData,

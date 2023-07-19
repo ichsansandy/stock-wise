@@ -11,6 +11,7 @@ module.exports = {
       },
       maxWidth: {
         wrap: '1000px',
+        filter: '1050px',
       },
     },
   },

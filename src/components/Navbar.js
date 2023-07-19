@@ -58,9 +58,6 @@ function Navbar() {
           <Dropdown
             menu={menuProps}
             placement="bottomRight"
-            arrow={{
-              pointAtCenter: true,
-            }}
             trigger={['click']}
           >
             <div className={`${theme} cursor-pointer flex items-center gap-2 border-accent border-2 p-2 rounded-xl hover:text-textClr hover:bg-accent transition`}>
