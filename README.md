@@ -14,7 +14,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-    <!-- - [🚀 Live Demo](#live-demo) -->
+    - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -31,7 +31,11 @@
 
 # 📖 Stock Wise <a name="about-project"></a>
 
-**Stock Wise** is a milestone project for microverse student in React Module
+**Stock Wise** is web-app that show you NASDAQ 100 stocks
+
+I am using [FMP API](https://financialmodelingprep.com/developer/docs/) free tier and its have 250 request limit
+<br/>
+If you find some error showing from the API, please come back tomorrow
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -52,11 +56,11 @@
 
 <!-- LIVE DEMO -->
 
-<!-- ## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://math-magician-xnju.onrender.com)
+- [Live Demo Link](https://stock-wise.vercel.app/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
