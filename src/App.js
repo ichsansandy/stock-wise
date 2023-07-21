@@ -4,6 +4,8 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import AboutmePage from './pages/AboutmePage';
 import StockDetailsPage from './pages/StockDetailsPage';
+import OverviewDetails from './components/OverviewDetails';
+import FundamentalsDetails from './components/FundamentalsDetails';
 
 function App() {
   return (
@@ -11,8 +13,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/:id" element={<StockDetailsPage />} />
-        <Route path="/aboutme" element={<AboutmePage />} />
+        <Route path=":symbol" element={<StockDetailsPage />}>
+          <Route path="overview" element={<OverviewDetails />} />
+          <Route path="fundamentals" element={<FundamentalsDetails />} />
+        </Route>
+        <Route path="aboutme" element={<AboutmePage />} />
       </Routes>
     </>
   );

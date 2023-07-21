@@ -52,7 +52,7 @@ function HomePage() {
   return (
     <>
       <div className={`h-[40vh] bg-primary ${theme}`}>Container Landing Image</div>
-      <div className={`flex justify-center z-10  sticky top-[76.8px] ${isScrolled ? 'lg:-translate-y-5' : ''}`}>
+      <div className={`flex justify-center lg:pt-4 items-center z-10 sticky top-[78.6px] ${isScrolled ? 'lg:-translate-y-11 ' : 'backdrop-blur-md'}`}>
         <div className={`h-[10vh] w-full drop-shadow-2xl max-w-filter flex gap-2  items-center lg:rounded-xl px-7 py-4 lg:w-[80%] bg-gradient-to-r from-secondary from-40% to-primary lg:mb-3 ${theme}`}>
           <input className="px-4 py-2 w-[80%] placeholder:text-xs sm:placeholder:text-base rounded-xl" onChange={(e) => setNameInput(e.target.value)} value={nameInput} type="text" placeholder="Type company name or stock symbol you want to find " />
           <Dropdown

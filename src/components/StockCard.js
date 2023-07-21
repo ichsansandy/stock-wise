@@ -3,13 +3,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import { apiImgURL } from '../assets/stockData';
+import { apiImgURL } from '../assets/api';
 
 function StockCard({ data, nameInput, selectedSector }) {
   const theme = useSelector((state) => state.changeTheme.value);
 
   return (
-    <Link to={`/${data.symbol}`} className={`text-white flex flex-col items-start p-3 bg-primary  aspect-square hover:scale-95 transition outline-offset-8 border-spacing-4 hover:opacity-75 hover:border-accent  hover:border-4 lg:w-[240px] lg:rounded-2xl ${theme} ${((data.name.toLowerCase().includes(nameInput) || data.symbol.toLowerCase().includes(nameInput)) && data.sector.includes(selectedSector)) ? ' ' : ' hidden'}`}>
+    <Link to={`/${data.symbol}/overview`} className={`text-white flex flex-col items-start p-3 bg-primary  aspect-square hover:scale-95 transition outline-offset-8 border-spacing-4 hover:opacity-75 hover:border-accent  hover:border-4 lg:w-[240px] lg:rounded-2xl ${theme} ${((data.name.toLowerCase().includes(nameInput.toLowerCase()) || data.symbol.toLowerCase().includes(nameInput.toLowerCase())) && data.sector.includes(selectedSector)) ? ' ' : ' hidden'}`}>
       <div className="flex justify-center items-center h-[70%] w-full">
         <img src={apiImgURL(data.symbol)} loading="lazy" alt="logo" className="h-[60%]" />
       </div>

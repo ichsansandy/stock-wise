@@ -10,25 +10,26 @@ import { changeTheme } from '../redux/theme/changeThemeSlice';
 function Navbar() {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.changeTheme.value);
-
   const items = [
     {
       key: '1',
       label: 'Magenta Madness',
       icon: <Circle color="#ec4c8a" fill="#ec4c8a" />,
-      classNames: 'magenta-madness',
+      value: 'magenta-madness',
+      color: '#ec4c8a',
     },
     {
       key: '2',
       label: 'Royal Blue',
       icon: <Circle color="#4369b2" fill="#4369b2" />,
-      classNames: 'royal-blue',
+      value: 'royal-blue',
+      color: '#4369b2',
     },
   ];
 
   const changesTheme = (e) => {
-    const value = items.find((i) => i.key === e.key).classNames;
-    dispatch(changeTheme(value));
+    const { value, color } = items.find((i) => i.key === e.key);
+    dispatch(changeTheme({ value, color }));
   };
 
   const menuProps = {

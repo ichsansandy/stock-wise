@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { apiPriceChangeURL, stockData } from '../../assets/stockData';
+import { stockData } from '../../assets/stockData';
+import { apiPriceChangeURL } from '../../assets/api';
 
 export const fetchStockPriceChange = createAsyncThunk('stockDatas/fetchPriceChange', () => axios.get(apiPriceChangeURL).then((res) => res.data));
 
@@ -31,8 +32,9 @@ export const stockDatasSlice = createSlice({
           item.ytd = parseFloat(action.payload[index].ytd).toFixed(2);
         });
       })
-      .addCase(fetchStockPriceChange.rejected, (state) => {
+      .addCase(fetchStockPriceChange.rejected, (state, action) => {
         state.status = 'error';
+        state.error = action.error.message;
       });
   },
 });
