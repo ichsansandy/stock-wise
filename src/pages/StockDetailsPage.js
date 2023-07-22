@@ -31,7 +31,7 @@ function StockDetailsPage() {
           </ul>
           <Outlet />
         </div>
-        <div className="hidden lg:block">
+        <div className="hidden lg:block w-[75%] py-4 border-primary/50 border-2 rounded-xl">
           <PriceHistoryChart />
         </div>
 

@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import {
-  Line,
-  LineChart,
+  Area,
+  AreaChart,
   ResponsiveContainer,
   Tooltip,
   XAxis,
-  YAxis,
 } from 'recharts';
 import { fetchPriceDetailsChange } from '../redux/stockDetails/stockDetailsSlice';
 import {
@@ -22,7 +21,7 @@ function PriceHistoryChart() {
   const { symbol } = useParams();
   const { priceDaily, status } = useSelector((state) => state.stockDetails);
   const [filter, setFilter] = useState('1W');
-  const color = useSelector((state) => (state.changeTheme.color));
+  const color = useSelector((state) => state.changeTheme.color);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -53,18 +52,8 @@ function PriceHistoryChart() {
   }, [symbol, filter, dispatch]);
 
   if (status !== 'completed') {
-    return (
-      <div>
-        Loading ...
-      </div>
-    );
+    return <div>Loading ...</div>;
   }
-
-  const minValue = Math.min(...priceDaily.map((item) => (item.Price)));
-  const maxValue = Math.max(...priceDaily.map((item) => (item.Price)));
-  const yPaddingPercentage = 0.05;
-  const yAxisMin = Math.floor(minValue * (1 - yPaddingPercentage));
-  const yAxisMax = Math.ceil(maxValue * (1 + yPaddingPercentage));
 
   return (
     <>
@@ -73,21 +62,24 @@ function PriceHistoryChart() {
           width="100%"
           height="100%"
         >
-          <LineChart data={priceDaily}>
-            <XAxis
-              dataKey="Time"
-            />
-            <YAxis
-              width={40}
-              domain={[yAxisMin, yAxisMax]}
-            />
-            <Tooltip />
-            <Line
+          <AreaChart
+            data={priceDaily}
+            margin={{
+              top: 5,
+              right: 0,
+              left: 0,
+              bottom: 5,
+            }}
+          >
+            <Area
               type="monotone"
               dataKey="Price"
               stroke={color}
+              fill={color}
             />
-          </LineChart>
+            <Tooltip />
+            <XAxis dataKey="Time" hide />
+          </AreaChart>
         </ResponsiveContainer>
       </div>
       <ul className="flex justify-center">
