@@ -5,6 +5,7 @@ import {
   Link, NavLink, Outlet, useParams,
 } from 'react-router-dom';
 import PriceHistoryChart from '../components/PriceHistoryChart';
+import { apiImgURL } from '../assets/api';
 
 function StockDetailsPage() {
   const { symbol } = useParams();
@@ -17,7 +18,12 @@ function StockDetailsPage() {
           <Link to="/">
             <ChevronLeft className="w-8 h-8 " />
           </Link>
-          <div className="text-center text-3xl">{`${symbol}`}</div>
+          <div className="flex justify-center items-center gap-2 font-bold text-3xl">
+            <div className={`${theme} rounded-full bg-secondary  aspect-square w-10 p-2.5 box-border flex justify-center items-center`}>
+              <img src={apiImgURL(symbol)} className={`${theme} bg-secondary bg-blend-difference`} alt="logo" />
+            </div>
+            {symbol}
+          </div>
           <Bookmark className="w-8 h-8 " />
         </div>
         <div className="px-4 py-6 lg:hidden">
@@ -31,12 +37,15 @@ function StockDetailsPage() {
           </ul>
           <Outlet />
         </div>
-        <div className="hidden lg:block w-[75%] py-4 border-primary/50 border-2 rounded-xl">
-          <PriceHistoryChart />
+        <div className="lg:flex lg:justify-center lg:mt-4 w-full hidden">
+          <div className="hidden lg:block w-[75%] py-4 border-primary/5 border-2 rounded-xl">
+            <PriceHistoryChart />
+          </div>
         </div>
-
       </div>
+
     </div>
+
   );
 }
 

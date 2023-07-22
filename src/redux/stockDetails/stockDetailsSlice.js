@@ -3,15 +3,13 @@ import axios from 'axios';
 import { convertUnixTimestampToDate } from '../../utils/dateUtils';
 
 export const fetchPriceDetailsChange = createAsyncThunk('stockDetails/fetchPrice', (url) => axios.get(url).then((res) => res.data));
+export const fetchPriceDetailsCurrent = createAsyncThunk('stockDetails/fetchCurrent', (url) => axios.get(url).then((res) => res.data));
 
 const initialState = {
   status: 'idle',
   error: '',
-  priceDaily: [],
-  priceWeekly: [],
-  incomeStatement: [],
-  balanceSheet: [],
-  cashFlow: [],
+  priceHistory: [],
+  currentPrice: {},
 };
 
 export const stockDetailsSlice = createSlice({
@@ -29,7 +27,7 @@ export const stockDetailsSlice = createSlice({
           Price: item.toFixed(0),
           Time: convertUnixTimestampToDate(action.payload.t[index]),
         }));
-        state.priceDaily = data;
+        state.priceHistory = data;
       })
       .addCase(fetchPriceDetailsChange.rejected, (state, action) => {
         state.status = 'error';
