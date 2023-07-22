@@ -7,9 +7,9 @@ function AboutmePage() {
 
   return (
     <div className="flex justify-center">
-      <div className="max-w-wrap w-full flex flex-wrap gap-2 p-4 lg:justify-center">
+      <div className="max-w-wrap w-full flex flex-wrap gap-2 p-4 md:justify-center ">
         <div
-          className={`${theme} border-2 p-3 rounded-xl border-primary text-left w-[100%] text-6xl lg:text-8xl lg:p-6 font-bold bg-accent text-textClr`}
+          className={`${theme} border-2 p-3 rounded-xl border-primary text-left w-[100%] text-6xl md:text-8xl lg:p-6 font-bold bg-accent text-textClr`}
         >
           <span>FORGET. </span>
           <br />
@@ -29,7 +29,7 @@ function AboutmePage() {
           className={`${theme} flex items-center gap-2 lg:gap-6 lg:p-5 border-2 border-primary bg-accent p-3 rounded-xl mt-3 `}
         >
           <a
-            className="hover:text-primary lg:scale-150 "
+            className="hover:text-primary hover:scale-125 lg:scale-150 lg:hover:scale-[200%] "
             href="http://github.com/ichsansandy"
             target="_blank"
             rel="noreferrer"
@@ -37,7 +37,7 @@ function AboutmePage() {
             <Github className={`${theme} text-textClr`} />
           </a>
           <a
-            className="hover:text-primary lg:scale-150"
+            className="hover:text-primary hover:scale-125 lg:scale-150 lg:hover:scale-[200%] "
             href="https://www.linkedin.com/in/ichsans/"
             target="_blank"
             rel="noreferrer"
@@ -45,7 +45,7 @@ function AboutmePage() {
             <Linkedin className={`${theme} text-textClr`} />
           </a>
           <a
-            className="hover:text-primary lg:scale-150"
+            className="hover:text-primary hover:scale-125 lg:scale-150 lg:hover:scale-[200%] "
             href="https://www.instagram.com/ichsans__/"
             target="_blank"
             rel="noreferrer"
@@ -55,7 +55,7 @@ function AboutmePage() {
         </div>
 
         <div className={`${theme} flex gap-2 lg:gap-6 lg:p-5 text-xl uppercase font-bold border-2 border-primary bg-primary p-3 rounded-xl mt-3 text-textClr`}>
-          2023
+          &copy;2023
         </div>
       </div>
     </div>
