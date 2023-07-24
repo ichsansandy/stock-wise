@@ -2,10 +2,11 @@ import {
   Github, Instagram, Linkedin, TrendingUp,
 } from 'lucide-react';
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '../redux/hooks';
+import { selectTheme } from '../redux/theme/changeThemeSlice';
 
 function AboutmePage() {
-  const theme = useSelector((state) => state.changeTheme.value);
+  const theme = useAppSelector(selectTheme);
 
   return (
     <div className="flex justify-center">

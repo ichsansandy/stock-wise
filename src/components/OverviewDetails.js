@@ -1,9 +1,10 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import PriceHistoryChart from './PriceHistoryChart';
+import { selectTheme } from '../redux/theme/changeThemeSlice';
+import { useAppSelector } from '../redux/hooks';
 
 function OverviewDetails() {
-  const theme = useSelector((state) => state.changeTheme.value);
+  const theme = useAppSelector(selectTheme);
 
   return (
     <div

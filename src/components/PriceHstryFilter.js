@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '../redux/hooks';
+import { selectTheme } from '../redux/theme/changeThemeSlice';
 
 function PriceHstryFilter({ onClick, active, text }) {
-  const theme = useSelector((state) => state.changeTheme.value);
+  const theme = useAppSelector(selectTheme);
 
   return (
     <button

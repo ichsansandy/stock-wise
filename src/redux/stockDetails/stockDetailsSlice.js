@@ -36,4 +36,6 @@ export const stockDetailsSlice = createSlice({
   },
 });
 
+export const selectStockDetails = (state) => state.stockDetails;
+
 export default stockDetailsSlice.reducer;

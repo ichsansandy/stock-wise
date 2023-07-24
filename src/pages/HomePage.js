@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Dropdown } from 'antd';
 import { Filter } from 'lucide-react';
 import StockCard from '../components/StockCard';
 import { sectors } from '../assets/stockData';
-import { fetchStockPriceChange } from '../redux/stockDatas/stockDatasSlice';
+import { fetchStockPriceChange, selectStockDatas } from '../redux/stockDatas/stockDatasSlice';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { selectTheme } from '../redux/theme/changeThemeSlice';
 
 function HomePage() {
-  const theme = useSelector((state) => state.changeTheme.value);
-  const { status, stockData } = useSelector((state) => state.stockDatas);
-  const dispatch = useDispatch();
+  const theme = useAppSelector(selectTheme);
+  const { status, stockData } = useAppSelector(selectStockDatas);
+  const dispatch = useAppDispatch();
 
   const [isScrolled, setIsScrolled] = useState(true);
   const [nameInput, setNameInput] = useState('');

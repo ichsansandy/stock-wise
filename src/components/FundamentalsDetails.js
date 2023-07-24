@@ -1,9 +1,10 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { useAppSelector } from '../redux/hooks';
+import { selectTheme } from '../redux/theme/changeThemeSlice';
 
 function FundamentalsDetails() {
-  const theme = useSelector((state) => state.changeTheme.value);
+  const theme = useAppSelector(selectTheme);
   const { symbol } = useParams();
 
   return (

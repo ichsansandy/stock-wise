@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import {
   Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from 'recharts';
-import { fetchPriceDetailsChange } from '../redux/stockDetails/stockDetailsSlice';
+import { fetchPriceDetailsChange, selectStockDetails } from '../redux/stockDetails/stockDetailsSlice';
 import {
   convertDateToUnixTimestamp,
   createDate,
@@ -12,13 +11,15 @@ import {
 } from '../utils/dateUtils';
 import PriceHstryFilter from './PriceHstryFilter';
 import { apiFinnhubPrice } from '../assets/api';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { selectColorTheme } from '../redux/theme/changeThemeSlice';
 
 function PriceHistoryChart() {
   const { symbol } = useParams();
-  const { priceHistory, status } = useSelector((state) => state.stockDetails);
+  const { priceHistory, status } = useAppSelector(selectStockDetails);
   const [filter, setFilter] = useState('1W');
-  const color = useSelector((state) => state.changeTheme.color);
-  const dispatch = useDispatch();
+  const color = useAppSelector(selectColorTheme);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const getDateInterval = () => {

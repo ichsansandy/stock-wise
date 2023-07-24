@@ -3,13 +3,13 @@ import {
 } from 'lucide-react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { Dropdown } from 'antd';
-import { changeTheme } from '../redux/theme/changeThemeSlice';
+import { changeTheme, selectTheme } from '../redux/theme/changeThemeSlice';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 
 function Navbar() {
-  const dispatch = useDispatch();
-  const theme = useSelector((state) => state.changeTheme.value);
+  const dispatch = useAppDispatch();
+  const theme = useAppSelector(selectTheme);
   const items = [
     {
       key: '1',

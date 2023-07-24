@@ -1,15 +1,16 @@
 import { Bookmark, ChevronLeft } from 'lucide-react';
 import React from 'react';
-import { useSelector } from 'react-redux';
 import {
   Link, NavLink, Outlet, useParams,
 } from 'react-router-dom';
 import PriceHistoryChart from '../components/PriceHistoryChart';
 import { apiImgURL } from '../assets/api';
+import { useAppSelector } from '../redux/hooks';
+import { selectTheme } from '../redux/theme/changeThemeSlice';
 
 function StockDetailsPage() {
   const { symbol } = useParams();
-  const theme = useSelector((state) => state.changeTheme.value);
+  const theme = useAppSelector(selectTheme);
 
   return (
     <div className="flex justify-center">
