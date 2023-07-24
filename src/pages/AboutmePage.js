@@ -1,4 +1,6 @@
-import { Github, Instagram, Linkedin } from 'lucide-react';
+import {
+  Github, Instagram, Linkedin, TrendingUp,
+} from 'lucide-react';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
@@ -9,22 +11,21 @@ function AboutmePage() {
     <div className="flex justify-center">
       <div className="max-w-wrap w-full flex flex-wrap gap-2 p-4 md:justify-center ">
         <div
-          className={`${theme} border-2 p-3 rounded-xl border-primary text-left w-[100%] text-6xl md:text-8xl lg:p-6 font-bold bg-accent text-textClr`}
+          className={`${theme} border-2 p-3 rounded-xl border-primary text-left w-[100%] text-6xl md:text-8xl lg:p-6  bg-accent text-textClr`}
         >
           <span>FORGET. </span>
           <br />
-          <span>ABOUT. </span>
+          <span className="font-extrabold underline">ABOUT. </span>
           <br />
-          <span>ME. </span>
+          <span className="font-extrabold underline">ME. </span>
           <br />
-          <span>NOT. </span>
+          <span className="font-bold">NOT. </span>
           <br />
         </div>
 
         <div className={`${theme} flex gap-2 lg:gap-6 lg:p-5  text-2xl uppercase font-bold border-2 border-primary bg-white p-3 rounded-xl mt-3 text-primary`}>
           Ichsan Sandy
         </div>
-
         <div
           className={`${theme} flex items-center gap-2 lg:gap-6 lg:p-5 border-2 border-primary bg-accent p-3 rounded-xl mt-3 `}
         >
@@ -53,9 +54,9 @@ function AboutmePage() {
             <Instagram className={`${theme} text-textClr`} />
           </a>
         </div>
-
-        <div className={`${theme} flex gap-2 lg:gap-6 lg:p-5 text-xl uppercase font-bold border-2 border-primary bg-primary p-3 rounded-xl mt-3 text-textClr`}>
-          &copy;2023
+        <div className={`${theme} flex gap-1 lg:gap-3 items-center lg:p-5 text-xl font-bold border-2 border-primary bg-primary p-3 rounded-xl mt-3 text-textClr`}>
+          <TrendingUp />
+          Stockwise &copy;2023
         </div>
       </div>
     </div>
