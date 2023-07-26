@@ -1,6 +1,7 @@
 import { stockSymbol } from './stockData';
 
 export const apiPriceChangeURL = `https://financialmodelingprep.com/api/v3/stock-price-change/${stockSymbol}?apikey=${process.env.REACT_APP_FMP_API_KEY}`;
+export const apiPriceChangeURLTest = `https://financialmodelingprep.com/api/v3/stock-price-change/${stockSymbol}`;
 
 export const apiImgURL = (symbol) => `https://financialmodelingprep.com/image-stock/${symbol}.png`;
 

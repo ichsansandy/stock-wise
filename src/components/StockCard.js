@@ -18,7 +18,7 @@ function StockCard({ data, nameInput, selectedSector }) {
         <div className="font-bold text-xl md:text-3xl">
           {data.symbol}
         </div>
-        <div className="text-xs min-[375px]:text-base lg:text-lg flex items-center">
+        <div data-testid={`1D-${data.symbol}`} className="text-xs min-[375px]:text-base lg:text-lg flex items-center">
           {data.oneDay > 0 ? <ChevronUp /> : <ChevronDown /> }
           {`${data.oneDay} %`}
         </div>
@@ -27,7 +27,7 @@ function StockCard({ data, nameInput, selectedSector }) {
         <div className="text-xs w-[40%] line-clamp-1 md:text-base">
           {data.name}
         </div>
-        <div className="hidden text-sm min-[375px]:flex items-center gap-1 ">
+        <div data-testid={`ytd-${data.symbol}`} className="hidden text-sm min-[375px]:flex items-center gap-1 ">
           YTD
           {data.ytd > 0 ? <ChevronUp className="w-4" /> : <ChevronDown className="w-4" /> }
           {`${data.ytd} %`}
