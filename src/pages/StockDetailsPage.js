@@ -19,7 +19,7 @@ function StockDetailsPage() {
           <Link to="/">
             <ChevronLeft className="w-8 h-8 " />
           </Link>
-          <div className="flex justify-center items-center gap-2 font-bold text-3xl">
+          <div data-testid={`details-${symbol}`} className="flex justify-center items-center gap-2 font-bold text-3xl">
             <div className={`${theme} rounded-full bg-secondary  aspect-square w-10 p-2.5 box-border flex justify-center items-center`}>
               <img src={apiImgURL(symbol)} className={`${theme} bg-secondary bg-blend-difference`} alt="logo" />
             </div>
@@ -44,7 +44,6 @@ function StockDetailsPage() {
           </div>
         </div>
       </div>
-
     </div>
 
   );
