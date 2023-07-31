@@ -37,7 +37,7 @@ I am using [FMP API](https://financialmodelingprep.com/developer/docs/) free tie
 <br/>
 If you find some error showing from the API, please come back tomorrow
 <br/>
-[Video Introduction](https://drive.google.com/file/d/1MKuXl2shaa91nja_5i58-3ZnCEqL5We2/view?usp=sharing)
+[Video Introduction](https://drive.google.com/file/d/1zgv3pxcXVUncn4oxEeoDmFjToCH-7LNG/view?usp=sharing)
 
 ## 🛠 Built With <a name="built-with"></a>
 
