@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.magenta-madness {
+  --primary: #ec4c8a;
+  --secondary: #b82e63;
+  --accent: #6b2e45;
+  --textClr: #fff;
+}
+
+.royal-blue {
+  --primary: #4369b2;
+  --secondary: #3e537a;
+  --accent: #30394b;
+  --textClr: #fff;
+}
